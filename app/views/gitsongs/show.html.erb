@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Repo:</strong>
+  <%= @gitsong.repo %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @gitsong.data %>
+</p>
+
+<p>
+  <strong>Share url:</strong>
+  <%= @gitsong.share_url %>
+</p>
+
+<%= link_to 'Edit', edit_gitsong_path(@gitsong) %> |
+<%= link_to 'Back', gitsongs_path %>

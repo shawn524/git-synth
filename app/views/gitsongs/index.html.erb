@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Gitsongs</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Repo</th>
+      <th>Data</th>
+      <th>Share url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gitsongs.each do |gitsong| %>
+      <tr>
+        <td><%= gitsong.repo %></td>
+        <td><%= gitsong.data %></td>
+        <td><%= gitsong.share_url %></td>
+        <td><%= link_to 'Show', gitsong %></td>
+        <td><%= link_to 'Edit', edit_gitsong_path(gitsong) %></td>
+        <td><%= link_to 'Destroy', gitsong, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gitsong', new_gitsong_path %>

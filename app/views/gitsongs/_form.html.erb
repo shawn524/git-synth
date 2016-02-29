@@ -1,0 +1,29 @@
+<%= form_for(@gitsong) do |f| %>
+  <% if @gitsong.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gitsong.errors.count, "error") %> prohibited this gitsong from being saved:</h2>
+
+      <ul>
+      <% @gitsong.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :repo %><br>
+    <%= f.text_field :repo %>
+  </div>
+  <div class="field">
+    <%= f.label :data %><br>
+    <%= f.text_area :data %>
+  </div>
+  <div class="field">
+    <%= f.label :share_url %><br>
+    <%= f.text_field :share_url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
