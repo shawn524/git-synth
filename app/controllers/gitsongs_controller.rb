@@ -5,12 +5,6 @@ class GitsongsController < ApplicationController
   # GET /gitsongs.json
   def index
     @gitsongs = Gitsong.all
-    client = Octokit::Client.new(:access_token => ENV['GITHUB_KEY'])
-    data = client.commits("shawn524/dotfiles")
-    @commits = data.map do |el|
-      el.commit.message
-    end
-    raise
   end
 
   # GET /gitsongs/1
@@ -30,7 +24,20 @@ class GitsongsController < ApplicationController
   # POST /gitsongs
   # POST /gitsongs.json
   def create
-    @gitsong = Gitsong.new(gitsong_params)
+
+    client = Octokit::Client.new(:access_token => ENV['GITHUB_KEY'])
+    
+    url = params[:gitsong][:repo]
+    
+    strip = strip_url(params[:gitsong][:repo])
+
+    repo = client.commits(strip)
+
+    @commits = repo.map do |el|
+      el.commit.message
+    end
+
+    @gitsong = Gitsong.new(repo: params[:gitsong][:repo], data: @commits.join(' '))
 
     respond_to do |format|
       if @gitsong.save
@@ -68,6 +75,12 @@ class GitsongsController < ApplicationController
   end
 
   private
+
+  def strip_url(url)
+    stripped_url = url.sub(/https\:\/\/github.com\//, '') if url.include? "https://github.com\/"
+    stripped_url = url.sub(/http\:\/\/github.com\//, '')  if url.include? "http://github.com\/"
+    return stripped_url || url
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_gitsong
       @gitsong = Gitsong.find(params[:id])
