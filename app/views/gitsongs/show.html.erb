@@ -7,13 +7,14 @@
 
 <p>
   <strong>Data:</strong>
-  <%= @gitsong.data %>
+  <%= @data  %>
+  <%= content_tag :div, nil, id: "repo_data", data: {data: @data} %>
 </p>
 
 <p>
   <strong>Share url:</strong>
   <%= @gitsong.share_url %>
 </p>
-
+<button id="play">Play</button>
 <%= link_to 'Edit', edit_gitsong_path(@gitsong) %> |
 <%= link_to 'Back', gitsongs_path %>

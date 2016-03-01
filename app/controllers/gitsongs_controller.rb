@@ -10,6 +10,7 @@ class GitsongsController < ApplicationController
   # GET /gitsongs/1
   # GET /gitsongs/1.json
   def show
+    @data = @gitsong.data
   end
 
   # GET /gitsongs/new

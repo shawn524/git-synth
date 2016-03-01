@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require timbre.js
 //= require synth.js
 //= require_tree .
