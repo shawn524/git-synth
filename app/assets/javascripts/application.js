@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require timbre.js
 //= require synth.js
+//= require semantic_ui/semantic_ui
 //= require_tree .
