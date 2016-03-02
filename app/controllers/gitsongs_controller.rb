@@ -1,5 +1,6 @@
 class GitsongsController < ApplicationController
   before_action :set_gitsong, only: [:show, :edit, :update, :destroy]
+  include GitsongsHelper
 
   # GET /gitsongs
   # GET /gitsongs.json
@@ -38,7 +39,9 @@ class GitsongsController < ApplicationController
       el.commit.message
     end
 
-    @gitsong = Gitsong.new(repo: params[:gitsong][:repo], data: @commits.join(' '))
+
+
+    @gitsong = Gitsong.new(repo: params[:gitsong][:repo], data: fuckingMUSIC(@commits))
 
     respond_to do |format|
       if @gitsong.save
