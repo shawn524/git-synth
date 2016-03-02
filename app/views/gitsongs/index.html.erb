@@ -7,7 +7,43 @@
       GITSYNTH
     </h1>
     <h2>Shitty music from your commit messages.</h2>
-    <div class="ui huge button blue inverted"><%= link_to 'New Gitsong', new_gitsong_path %> <i class="right arrow icon"></i></div>
+    <div class="ui huge button blue inverted" id="modal_show">
+       New Gitsong<i class="right arrow icon"></i>
+    </div>
   </div>
 
-</div>
+  <div class="ui four column centered grid basic modal">
+    <i class="close icon"></i>
+
+    <div class="ui column content">
+      <div class="image">
+        <i class="sound icon"></i>
+      </div>
+    </div>
+
+      <div class="content">
+        <div class="ui fluid form">
+          <div class="field">
+            <label>URL</label>
+            <input name="url" placeholder="URL" type="text">
+          </div>
+        </div>
+      </div>
+
+
+    <div class="actions">
+      <div class="two fluid ui inverted buttons">
+        <div class="ui red basic inverted button">
+          <i class="remove icon"></i>
+          Cancel
+        </div>
+        <div class="ui green basic inverted button">
+          <i class="checkmark icon"></i>
+          Submit
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div><%= link_to 'New Gitsong', new_gitsong_path %>
