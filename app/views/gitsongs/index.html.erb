@@ -21,29 +21,28 @@
       </div>
     </div>
 
-      <div class="content">
+    <div class="content">
+      <%= form_for(@gitsong) do |f| %>
         <div class="ui fluid form">
           <div class="field">
-            <label>URL</label>
-            <input name="url" placeholder="URL" type="text">
+            <%= f.text_field :repo, placeholder: "URL" %>
           </div>
         </div>
       </div>
 
 
-    <div class="actions">
-      <div class="two fluid ui inverted buttons">
-        <div class="ui red basic inverted button">
-          <i class="remove icon"></i>
-          Cancel
-        </div>
-        <div class="ui green basic inverted button">
-          <i class="checkmark icon"></i>
-          Submit
+      <div class="actions">
+        <div class="two fluid ui inverted buttons">
+          <div id="cancel_button" class="ui red basic inverted button">
+            <i class="remove icon"></i>
+            Cancel
+          </div>
+          <button id="submit_button" class="ui green basic inverted button" type="submit" name="commit">
+            <i class="checkmark icon"></i>
+            Submit
+          </button>
         </div>
       </div>
-    </div>
 
+    <% end %>
   </div>
-
-</div><%= link_to 'New Gitsong', new_gitsong_path %>

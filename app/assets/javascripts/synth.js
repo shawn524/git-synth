@@ -17,14 +17,8 @@ $(document).ready(function() {
     master = T("phaser", {freq:mod, Q:5, steps:8}, master);
     master = T("delay", {time:"BPM60 L16", fb:0.65, mix:0.25}, master);
 
-
-
-
-
     mml0 = $("#repo_data").data('data')
     // mml0 = "a8.5 e8 a8.5 e8 a8.5 e8 a8.5 e8 a8.5 e8 a8.5 e8"      
-    
-
 
 
     T("mml", {mml:mml0}, synth).on("ended", function() {
@@ -32,6 +26,6 @@ $(document).ready(function() {
     }).set({buddies:master}).start();
 
 
-  })
+  }); // end click function
 
 })

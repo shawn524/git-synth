@@ -5,7 +5,7 @@ class GitsongsController < ApplicationController
   # GET /gitsongs
   # GET /gitsongs.json
   def index
-    @gitsongs = Gitsong.all
+    @gitsong = Gitsong.new
   end
 
   # GET /gitsongs/1

@@ -42,6 +42,7 @@ module GitsongsHelper
       '!'  => '<<<g8>>>',
       ' ' => '&',
       '?'  => '|',
+      'r'  =>  'r'
     }
     commits_string.split('').each do |ltr|
       if alpha[ltr.downcase] 

@@ -6,4 +6,8 @@ $(document).ready(function() {
     // .modal({blurring: true})
     .modal('show');
   })
+
+  $("#cancel_button").on('click', function() {
+    $('.ui.basic.modal').modal('hide');
+  })
 })
