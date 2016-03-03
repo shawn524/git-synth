@@ -1,20 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="ui inverted vertical masthead center aligned segment">
 
-<p>
-  <strong>Repo:</strong>
-  <%= @gitsong.repo %>
-</p>
+  <div class="ui fluid text container">
+    <h1 class="ui inverted header show">
+        <%= @gitsong.repo  %>
+    </h1>
+    <div class="ui huge button blue inverted" id="play">
+       Play<i id="icon" class="right play icon"></i>
+    </div>
+  </div>
 
-<p>
-  <strong>Data:</strong>
-  <%= @data  %>
+</div>
+
   <%= content_tag :div, nil, id: "repo_data", data: {data: @data} %>
-</p>
-
-<p>
-  <strong>Share url:</strong>
-  <%= @gitsong.share_url %>
-</p>
-<button id="play">Play</button>
-<%= link_to 'Edit', edit_gitsong_path(@gitsong) %> |
-<%= link_to 'Back', gitsongs_path %>

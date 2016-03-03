@@ -1,4 +1,3 @@
-
 /*
 KICK
 */
@@ -78,4 +77,3 @@ bassPart.probability = 0.9;
 //set the transport 
 Tone.Transport.bpm.value = 90;
 
-Tone.Transport.start();

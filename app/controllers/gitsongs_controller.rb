@@ -1,5 +1,5 @@
 class GitsongsController < ApplicationController
-  before_action :set_gitsong, only: [:show, :edit, :update, :destroy]
+  before_action :set_gitsong, only: [:show, :update, :destroy]
   include GitsongsHelper
 
   # GET /gitsongs
@@ -14,13 +14,8 @@ class GitsongsController < ApplicationController
     @data = @gitsong.data
   end
 
-  # GET /gitsongs/new
-  def new
-    @gitsong = Gitsong.new
-  end
-
-  # GET /gitsongs/1/edit
-  def edit
+  def all
+    @gitsongs = Gitsong.all
   end
 
   # POST /gitsongs

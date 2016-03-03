@@ -1,0 +1,20 @@
+<div class="ui inverted vertical masthead center aligned segment">
+
+  <div class="ui fluid text container">
+    <table class="ui inverted table">
+      <tbody>
+
+        <% @gitsongs.each do |link|  %>
+          <tr>
+            <td><%= link.repo  %></td>
+            <td class="right aligned">
+              <a class="ui inverted blue button" href="/gitsongs/<%= link.id  %>">Link</a>
+            </td>
+          </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+  </div>
+
+</div>

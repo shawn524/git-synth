@@ -1,25 +1,28 @@
 // Place all the styles related to the gitsongs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.image {
+  text-align: center;
+}
 
-.hidden.menu {
-  display: none;
+.ui.huge.button.blue.inverted {
+  margin-top: 2em;
 }
 
 .masthead.segment {
   min-height: 700px;
   padding: 1em 0em;
 }
-.masthead .logo.item img {
-  margin-right: 1em;
-}
-.masthead .ui.menu .ui.button {
-  margin-left: 0.5em;
-}
 .masthead h1.ui.header {
   margin-top: 3em;
   margin-bottom: 0em;
   font-size: 4em;
+  font-weight: normal;
+}
+.masthead h1.ui.header.show {
+  margin-top: 4em;
+  margin-bottom: 0em;
+  font-size: 2em;
   font-weight: normal;
 }
 .masthead h2 {
@@ -53,14 +56,6 @@
 .quote.stripe.segment .grid .column {
   padding-top: 5em;
   padding-bottom: 5em;
-}
-
-.footer.segment {
-  padding: 5em 0em;
-}
-
-.secondary.pointing.menu .toc.item {
-  display: none;
 }
 
 @media only screen and (max-width: 700px) {
