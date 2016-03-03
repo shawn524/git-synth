@@ -28,13 +28,16 @@ class GitsongsController < ApplicationController
     
     strip = strip_url(params[:gitsong][:repo])
 
-    repo = client.commits(strip)
-
+    begin
+      repo = client.commits(strip)
+    rescue Octokit::InvalidRepository
+      return redirect_to "/"
+    end
     @commits = repo.map do |el|
       el.commit.message
     end
 
-
+raise
 
     @gitsong = Gitsong.new(repo: params[:gitsong][:repo], data: fuckingMUSIC(@commits))
 
