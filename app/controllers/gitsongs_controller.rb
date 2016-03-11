@@ -37,13 +37,11 @@ class GitsongsController < ApplicationController
       el.commit.message
     end
 
-raise
-
     @gitsong = Gitsong.new(repo: params[:gitsong][:repo], data: fuckingMUSIC(@commits))
 
     respond_to do |format|
       if @gitsong.save
-        format.html { redirect_to @gitsong, notice: 'Gitsong was successfully created.' }
+        format.html { redirect_to @gitsong}
         format.json { render :show, status: :created, location: @gitsong }
       else
         format.html { render :new }
