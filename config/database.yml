@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: git-synth_production
-  username: git-synth
+  username: <%= ENV['GIT-SYNTH_DATABASE_USERNAME'] %>
   password: <%= ENV['GIT-SYNTH_DATABASE_PASSWORD'] %>
