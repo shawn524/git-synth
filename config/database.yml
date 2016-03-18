@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: git-synth_production
+  database: <%= ENV['GIT-SYNTH_DATABASE']  %>
   username: <%= ENV['GIT-SYNTH_DATABASE_USERNAME'] %>
   password: <%= ENV['GIT-SYNTH_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL']  %>
